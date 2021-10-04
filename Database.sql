@@ -20,7 +20,7 @@ id_product INTEGER(11) NOT NULL,
 quantity_product INTEGER(11) NOT NULL,
 FOREIGN KEY (id_product) REFERENCES tbl_product(id_product)
 );
-CREATE TABLE IF NOT EXISTS tbl_admin(
+CREATE TABLE IF NOT EXISTS tbl_user(
 id_account INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
 username VARCHAR(100) NOT NULL,
 password VARCHAR(100) NOT NULL,
