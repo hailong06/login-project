@@ -1,4 +1,4 @@
 <?php
-    require_once "./mvc/brigde.php";
+    require_once "./brigde.php";
     $app = new app();
 ?>
