@@ -1,14 +1,12 @@
 
 <?php
     class news extends controller{
-        public $home_model;
-		
+        public $news_model;
 		function __construct()
 	 	{
 	 		$this->news_model = $this->model("news_model");
 	 		
 	 	}
-
 		public function product(){
 			$this->viewadmin("masterlayout",[
 				"page"=>"news/index",
@@ -55,5 +53,36 @@
 				"result"=>$kq,
 			]);
 		}
+		public function edit($id){
+			$this->viewadmin("masterlayout",[
+				"page"=>"news/edit",
+				"edit"=>$this->news_model->edit($id),
+			]);
+		}
+		public function update($id){
+			$result_mess = false;
+			if(isset($_POST["submit"])){
+				if (empty($_POST['title']) || empty($_POST['price']) || empty($_POST['type']) || empty($_POST['img']) || empty($_POST['desc']) || empty($_POST['status'])){
+					$this->viewadmin("masterlayout",[
+						"page"=>"news/edit",
+						"edit"=>$this->news_model->edit($id),
+						"result"=>$result_mess,
+					]);
+				}else{
+						$title = $_POST["title"];
+						$price = $_POST["price"];
+						$type = $_POST["type"];
+						$img = $_POST["img"];
+						$desc = $_POST["desc"];
+						$status = $_POST["status"];
+						$kq = $this->news_model->update($id,$title, $price, $type, $img, $desc, $status);
+						$this->viewadmin("masterlayout",[
+							"page"=>"news/edit",
+							"edit"=>$this->news_model->edit($id),
+							"result"=>$kq,
+						]);
+					}
+				}
+			}
 	}
 ?>
