@@ -4,12 +4,13 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <a href="" class="btn btn-warning" style="margin-bottom:20px">Thêm Bài đăng</a>
+                                    <a href="news/view_insert" class="btn btn-warning" style="margin-bottom:20px">Thêm Bài đăng</a>
                                     <thead>
                                         <tr>
                                             <th>STT</th>
                                             <th>Title</th>
                                             <th>Giá thành</th>
+                                            <th>Thể loại</th>
                                             <th>Hình ảnh</th>
                                             <th>Mô tả</th>
                                             <th>Trạng thái</th>
@@ -25,7 +26,8 @@
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $news["title_product"]; ?></td>
                                             <td><?php echo $news["price_product"]; ?></td>
-                                            <td><?php echo $news["img_product"]; ?></td>
+                                            <td><?php echo $news["id_category_product"]; ?></td>
+                                            <td><?php echo '<img src="public/img/'.$news["img_product"].'" width="100px;" height="100px;" alt="img">' ?></td>
                                             <td><?php echo $news["desc_category_product"]; ?></td>
                                             <td><?php echo $news["status"]; ?></td>
                                             <th>

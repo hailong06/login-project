@@ -4,7 +4,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <a href="" class="btn btn-warning" style="margin-bottom:20px">Thêm người dùng</a>
+                                    <a href="home/view_insert" class="btn btn-warning" style="margin-bottom:20px">Thêm người dùng</a>
                                     <thead>
                                         <tr>
                                             <th>STT</th>
