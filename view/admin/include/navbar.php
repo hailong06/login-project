@@ -9,6 +9,11 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Divider -->
+            <li class="nav-item active">
+                <a class="nav-link" href="trangchu">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Trang web</span></a>
+            </li>
             <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -47,6 +52,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             
+
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
