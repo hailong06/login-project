@@ -53,10 +53,49 @@
 							]);
 						}
 				}
-				
 			}
-
-		} 
+		}
+		public function delete($id){
+			$kq = $this->home_model->delete($id);
+			$this->viewadmin("masterlayout",[
+				"page"=>"user/index",
+				"user"=>$this->home_model->get(),
+				"result"=>$kq,
+			]);
+		}
+		public function edit($id){
+			$this->viewadmin("masterlayout",[
+				"page"=>"user/edit",
+				"edit"=>$this->home_model->edit($id),
+			]);
+		}
+		public function update($id){
+			$result_mess = false;
+			if(isset($_POST["submit"])){
+				if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['address'])) {
+					$this->viewadmin("masterlayout",[
+						"page"=>"user/edit",
+						"edit"=>$this->home_model->edit($id),
+						"result"=>$result_mess,
+					]);
+				}else{
+						$username = $_POST["username"];
+						$password = $_POST["password"];
+						$fullname = $_POST["fullname"];
+						$email = $_POST["email"];
+						$phone = $_POST["phone"];
+						$address = $_POST["address"];
+						$roll = $_POST["roll"];
+						
+						$kq = $this->home_model->update($id,$username, $password, $fullname, $email, $phone, $address, $roll);
+						$this->viewadmin("masterlayout",[
+							"page"=>"user/edit",
+							"edit"=>$this->home_model->edit($id),
+							"result"=>$kq,
+						]);
+					}
+				}
+			}
     }
 
 ?>
