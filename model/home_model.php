@@ -16,6 +16,14 @@
 			$sql = "SELECT *FROM tbl_user where username = '$username' ";
 			return mysqli_query($this->conn, $sql);
 		}
+		public function delete($id){
+			$sql = "DELETE FROM `tbl_user` WHERE id_account = '$id'";
+			$result = false;
+			if (mysqli_query($this->conn,$sql)) {
+				$result = true;
+			}
+			return json_encode($result);
+		}
     }
 
 ?>

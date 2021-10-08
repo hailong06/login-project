@@ -53,10 +53,17 @@
 							]);
 						}
 				}
-				
 			}
+		}
+		public function delete($id){
+			$kq = $this->home_model->delete($id);
+			$this->viewadmin("masterlayout",[
+				"page"=>"user/index",
+				"user"=>$this->home_model->get(),
+				"result"=>$kq,
+			]);
+		}
 
-		} 
     }
 
 ?>

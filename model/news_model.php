@@ -12,6 +12,14 @@
 			}
 			return json_encode($result);
 		}
+		public function delete($id){
+			$sql = "DELETE FROM `tbl_product` WHERE id_product = '$id'";
+			$result = false;
+			if (mysqli_query($this->conn,$sql)) {
+				$result = true;
+			}
+			return json_encode($result);
+		}
 
     }
 

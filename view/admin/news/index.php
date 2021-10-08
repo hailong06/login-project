@@ -16,12 +16,23 @@
                                             <th>Trạng thái</th>
                                         </tr>
                                     </thead>
-
+                                    <?php 
+                                    if(isset($data["result"])){
+                                        if($data["result"]=="true"){ ?>
+                                            <h3 class="alert alert-success">
+                                                <?php echo "Xóa thành công"; ?>
+                                            </h3>
+                                        <?php }else{?>
+                                            <h3 class="alert alert-warning">
+                                                <?php echo "Xóa thất bại"; ?>
+                                            </h3>
+                                        <?php }
+                                    }
+                                    ?>
                                     <tbody>
                                     <?php 
                                     $i=1;
-                                        while($news= mysqli_fetch_array($data["news"])){ ?>
-                                            
+                                        while($news= mysqli_fetch_array($data["news"])){ ?>  
                                         <tr>
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $news["title_product"]; ?></td>

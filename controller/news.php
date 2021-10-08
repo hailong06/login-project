@@ -47,7 +47,13 @@
 				
 			}
 
-		}  
-    
-
+    	public function delete($id){
+			$kq = $this->news_model->delete($id);
+			$this->viewadmin("masterlayout",[
+				"page"=>"news/index",
+				"news"=>$this->news_model->get(),
+				"result"=>$kq,
+			]);
+		}
+	}
 ?>
