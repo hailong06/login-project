@@ -35,15 +35,18 @@
 						
 						if ($rollDB == "user") {
 							$_SESSION["id"] = $id;
-							setcookie("id", "username", time()+3600, "/", "", 0);
+							if (!empty($_POST["remeber"])) {
+								etcookie("id", "username", time()+3600, "/", "", 0);
+							}
+							
 							header("Location: http://localhost/login-project/trangchu");
 						}else if($rollDB == "admin"){
 							$_SESSION["id"] = $id;
 							$_SESSION["username"] = $username;
 							if (!empty($_POST["remeber"])) {
-								setcookie("id", "username", time()+3600, "/", "", 0);
-								setcookie("id", "password", time()+3600, "/", "", 0);
+								etcookie("id", "username", time()+3600, "/", "", 0);
 							}
+							
 							header("Location: http://localhost/login-project/home");
 						}
 					}else{
@@ -57,6 +60,7 @@
 		public function logout(){
 			session_destroy();
 			unset($_SESSION['username']);
+			setcookie("username", "", time()-3600);
 			header("Location: http://localhost/login-project/login");   
 		}
 	}
