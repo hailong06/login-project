@@ -1,3 +1,12 @@
+
+<?php 
+ob_start();
+
+if (!$_SESSION["id"]) {
+    header("Location: http://localhost/login-project/login");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
