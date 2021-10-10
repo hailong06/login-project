@@ -36,7 +36,7 @@
 						if ($rollDB == "user") {
 							$_SESSION["id"] = $id;
 							if (!empty($_POST["remeber"])) {
-								etcookie("id", "username", time()+3600, "/", "", 0);
+								setcookie("id", "username", time()+3600, "/", "", 0);
 							}
 							
 							header("Location: http://localhost/login-project/trangchu");
@@ -44,7 +44,7 @@
 							$_SESSION["id"] = $id;
 							$_SESSION["username"] = $username;
 							if (!empty($_POST["remeber"])) {
-								etcookie("id", "username", time()+3600, "/", "", 0);
+								setcookie("id", "username", time()+3600, "/", "", 0);
 							}
 							
 							header("Location: http://localhost/login-project/home");
