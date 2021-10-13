@@ -16,7 +16,19 @@
                                             <th>Chức vụ</th>
                                         </tr>
                                     </thead>
-
+                                    <?php 
+                                    if(isset($data["result"])){
+                                        if($data["result"]=="true"){ ?>
+                                            <h3 class="alert alert-success">
+                                                <?php echo "Xóa thành công"; ?>
+                                            </h3>
+                                        <?php }else{?>
+                                            <h3 class="alert alert-warning">
+                                                <?php echo "Xóa thất bại"; ?>
+                                            </h3>
+                                        <?php }
+                                    }
+                                    ?>
                                     <tbody>
                                     <?php 
                                     $i=1;
@@ -34,14 +46,11 @@
                                                 <td><a href="home/edit/<?php echo $user["id_account"];  ?>" class="btn btn-primary">Edit</a></td>
                                             </th>
                                             <th>
-                                                <td><a href="home/delete/<?php echo $user["id_account"];  ?>" class="btn btn-danger">Delete</a></td>
+                                                <td><a href="home/delete/<?php echo $user["id_account"];  ?>" class="btn btn-danger" name="home_delete">Delete</a></td>
                                             </th>
                                             <?php $i++; }
                                      ?>
                                     </tbody>
-                                       
-
-                                    
                                 </table>
                             </div>
                         </div>

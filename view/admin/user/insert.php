@@ -7,6 +7,19 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                                <?php 
+                                    if(isset($data["result"])){
+                                        if($data["result"]=="true"){ ?>
+                                            <h3 class="alert alert-success">
+                                                <?php echo "Thêm thành công"; ?>
+                                            </h3>
+                                        <?php }else{?>
+                                            <h3 class="alert alert-warning">
+                                                <?php echo "Thêm thất bại"; ?>
+                                            </h3>
+                                        <?php }
+                                    }
+                                 ?>
                                 <form action="home/insert" method="POST">
                                     <div class="form-group">
                                         <label>Username *</label>
@@ -50,22 +63,7 @@
                                         <input type="submit" name="submit" class="form-control btn btn-warning" value="Add" 
                                         >
                                     </div>
-
                                 </form>
-                                <?php 
-                                    if(isset($data["result"])){
-                                        if($data["result"]=="true"){ ?>
-                                            <h3 class="alert alert-success">
-                                                <?php echo "Thêm thành công"; ?>
-                                            </h3>
-                                        <?php }else{?>
-                                            <h3 class="alert alert-warning">
-                                                <?php echo "Thêm thất bại"; ?>
-                                            </h3>
-                                        <?php }
-                                    }
-
-                                 ?>
                             </div>
                         </div>
                     </div>
