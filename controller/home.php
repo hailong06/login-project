@@ -86,7 +86,7 @@
 						$phone = $_POST["phone"];
 						$address = $_POST["address"];
 						$roll = $_POST["roll"];
-						
+						$password = password_hash($password, PASSWORD_DEFAULT);
 						$kq = $this->home_model->update($id,$username, $password, $fullname, $email, $phone, $address, $roll);
 						$this->viewadmin("masterlayout",[
 							"page"=>"user/edit",
